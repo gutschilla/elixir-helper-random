@@ -20,7 +20,11 @@ Numbers may be shorter than length. (Due to possible start with 0)
 The whole thing relies on Erlang's random:uniform/1 - I don't know if this is a
 secure PRNG or not, so better do not use this module for security stuff.
 
-TODO
+Todo
 ====
 
 Add documentation, generate String of numbers.
+
+LICENSE
+=======
+MIT
