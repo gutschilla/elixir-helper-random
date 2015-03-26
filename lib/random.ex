@@ -1,21 +1,4 @@
-defmodule Random do
-
-    use Application
-
-    # See http://elixir-lang.org/docs/stable/elixir/Application.html
-    # for more information on OTP Applications
-    def start(_type, _args) do
-        import Supervisor.Spec, warn: false
-
-        children = [
-          # Define workers and child supervisors to be supervised
-          # worker(TestApp.Worker, [arg1, arg2, arg3])
-        ]
-        opts = [strategy: :one_for_one, name: Random.Supervisor]
-        Supervisor.start_link(children, opts)
-    end
-
-
+defmodule Misc.Random do
     def string( length ) do
         get_string( length )
     end
@@ -53,17 +36,4 @@ defmodule Random do
         number
     end
 
-end
-
-defmodule Random.Supervisor do
-    use Supervisor
-
-    def start_link do
-        Supervisor.start_link(__MODULE__, :ok)
-    end
-
-    def init(:ok) do
-        children = []
-        supervise(children, strategy: :one_for_one)
-    end
 end

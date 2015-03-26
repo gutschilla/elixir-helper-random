@@ -1,9 +1,9 @@
-defmodule Random.Mixfile do
+defmodule Misc.Random.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :random,
-     version: "0.0.1",
+    [app: :misc_random,
+     version: "0.1.0",
      elixir: "~> 1.0.0",
      deps: deps]
   end
@@ -12,7 +12,7 @@ defmodule Random.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:logger]]
+    []
   end
 
   # Dependencies can be Hex packages:
@@ -27,4 +27,24 @@ defmodule Random.Mixfile do
   defp deps do
     []
   end
+
+  defp description do
+    """
+    This is a very thin wrapper around erlang's random:uniform method. It allows
+    you to create random strings or numbers.
+    """
+  end
+  
+  defp package do
+    [# These are the default files included in the package
+     files: ["lib", "priv", "mix.exs", "README*", "readme*", "LICENSE*", "license*"],
+     contributors: ["Martin Gutsch"],
+     licenses: ["MIT"],
+     links: %{
+        "GitHub" => "https://github.com/gutschilla/elixir-helper-random"
+        # "Docs" => "http://ericmj.github.io/postgrex/"
+      }
+     ]
+  end
+
 end
