@@ -3,7 +3,7 @@ defmodule Misc.Random.Mixfile do
 
   def project do
     [app: :misc_random,
-     version: "0.1.0",
+     version: "0.2.2",
      elixir: "~> 1.0.0",
      deps: deps]
   end
