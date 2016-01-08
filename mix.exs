@@ -3,8 +3,10 @@ defmodule Misc.Random.Mixfile do
 
   def project do
     [app: :misc_random,
-     version: "0.2.4",
+     version: "0.2.5",
      elixir: "> 1.0.0",
+     description: description,
+     package: package,
      deps: deps]
   end
 
@@ -38,7 +40,7 @@ defmodule Misc.Random.Mixfile do
   defp package do
     [# These are the default files included in the package
      files: ["lib", "priv", "mix.exs", "README*", "readme*", "LICENSE*", "license*"],
-     contributors: ["Martin Gutsch"],
+     maintainers: ["Martin Gutsch"],
      licenses: ["MIT"],
      links: %{
         "GitHub" => "https://github.com/gutschilla/elixir-helper-random"
