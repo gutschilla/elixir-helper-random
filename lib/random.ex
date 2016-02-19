@@ -25,11 +25,16 @@ defmodule Misc.Random do
             =  "abcdefghijklmnopqrstuvwxyz"
             <> "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             <> "0123456789"
-        alphabet_length = alphabet |> String.length
+        alphabet_length = 
+        
+        alphabet |> String.length
+
         1..length
-        |> Enum.map_join fn(_) ->
-            alphabet |> String.at :random.uniform( alphabet_length ) - 1
-        end
+          |> Enum.map_join( 
+            fn(_) ->
+              alphabet |> String.at( :random.uniform( alphabet_length ) - 1 )
+            end
+          )
     end
 
     def number() do
@@ -42,9 +47,11 @@ defmodule Misc.Random do
 
     def get_number( length ) do
         seed_random
-        { number, "" } = Integer.parse 1..length |> Enum.map_join fn(_) ->
-            :random.uniform(10) - 1
-        end
+
+        { number, "" } = 
+          Integer.parse 1..length 
+          |> Enum.map_join( fn(_) ->  :random.uniform(10) - 1 end )
+        
         number
     end
 
