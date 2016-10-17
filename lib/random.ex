@@ -1,8 +1,8 @@
 defmodule Misc.Random do
 
     def seed_random do
-        use_monotonic = :erlang.module_info 
-            |> Keyword.get( :exports ) 
+        use_monotonic = :erlang.module_info
+            |> Keyword.get( :exports )
             |> Keyword.get( :monotonic_time )
         time_bif = case use_monotonic do
           1   -> &:erlang.monotonic_time/0
@@ -25,12 +25,11 @@ defmodule Misc.Random do
             =  "abcdefghijklmnopqrstuvwxyz"
             <> "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             <> "0123456789"
-        alphabet_length = 
-        
+        alphabet_length =
         alphabet |> String.length
 
         1..length
-          |> Enum.map_join( 
+          |> Enum.map_join(
             fn(_) ->
               alphabet |> String.at( :random.uniform( alphabet_length ) - 1 )
             end
@@ -51,7 +50,6 @@ defmodule Misc.Random do
         { number, "" } = 
           Integer.parse 1..length 
           |> Enum.map_join( fn(_) ->  :random.uniform(10) - 1 end )
-        
         number
     end
 
