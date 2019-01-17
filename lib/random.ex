@@ -20,7 +20,7 @@ defmodule Misc.Random do
     end
 
     def get_string( length ) do
-        seed_random
+        seed_random()
         alphabet
             =  "abcdefghijklmnopqrstuvwxyz"
             <> "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -46,7 +46,7 @@ defmodule Misc.Random do
     end
 
     def get_number( length ) do
-        seed_random
+        seed_random()
 
         { number, "" } = 
           Integer.parse 1..length 

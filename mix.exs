@@ -5,9 +5,9 @@ defmodule Misc.Random.Mixfile do
     [app: :misc_random,
      version: "0.2.6",
      elixir: "> 1.0.0",
-     description: description,
-     package: package,
-     deps: deps]
+     description: description(),
+     package: package(),
+     deps: deps()]
   end
 
   # Configuration for the OTP application
