@@ -3,7 +3,7 @@ defmodule Misc.Random.Mixfile do
 
   def project do
     [app: :misc_random,
-     version: "0.2.8",
+     version: "0.2.9",
      elixir: "> 1.0.0",
      description: description(),
      package: package(),
@@ -27,7 +27,7 @@ defmodule Misc.Random.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    []
+    [{:ex_doc, ">= 0.0.0", only: :dev}]
   end
 
   defp description do
