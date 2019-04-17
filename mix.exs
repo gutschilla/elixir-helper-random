@@ -3,11 +3,11 @@ defmodule Misc.Random.Mixfile do
 
   def project do
     [app: :misc_random,
-     version: "0.2.6",
+     version: "0.2.8",
      elixir: "> 1.0.0",
-     description: description,
-     package: package,
-     deps: deps]
+     description: description(),
+     package: package(),
+     deps: deps()]
   end
 
   # Configuration for the OTP application
@@ -32,11 +32,11 @@ defmodule Misc.Random.Mixfile do
 
   defp description do
     """
-    This is a very thin wrapper around erlang's random:uniform method. It allows
-    you to create random strings or numbers.
+    Creates random numbers and strings of arbitrary lengths. Uses preferred
+    Erlang random module based on used OTP version.
     """
   end
-  
+
   defp package do
     [# These are the default files included in the package
      files: ["lib", "mix.exs", "README*", "LICENSE*"],
